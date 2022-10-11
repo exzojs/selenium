@@ -21,7 +21,6 @@ public class OrderCardTest {
     void setUp(){
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(true);
-
         driver = new ChromeDriver(options);
     }
 
@@ -35,8 +34,8 @@ public class OrderCardTest {
     @Test
     void ShouldCardOrder() {
         driver.get("http://localhost:9999");
-        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Евгений Серков");
-        driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79999999999");
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Евгений Серков");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79999999999");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button__text")).click();
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
